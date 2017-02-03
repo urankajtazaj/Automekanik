@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="77774f93-7d71-40fd-b1cf-2e7d3ec7f4bd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Punet" uuid="92a1a54c-6457-4135-a020-06786614f4a7">
+		<queryString language="SQL">
+			<![CDATA[select * from Punet]]>
+		</queryString>
+		<field name="ID" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="LLOJI" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="DATA" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="QMIMI" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="KONSUMATORI" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="PERSHKRIMI" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="PUNETORI" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="KRYER" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="konsumatori" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from Punet where lower(konsumatori) = lower($P{konsumatori})]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LLOJI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATA" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QMIMI" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KONSUMATORI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PERSHKRIMI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PUNETORI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KRYER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="shuma" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{QMIMI}]]></variableExpression>
+	</variable>
+	<filterExpression><![CDATA[new Boolean(true)]]></filterExpression>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="194" y="25" width="170" height="20" uuid="d0a4ac56-1920-4fdc-847a-f18ef1d68254"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TITULLI I RAPORTIT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="14" width="43" height="20" uuid="9418d006-dc62-45f3-8afe-2a67b15f85cb"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="14" width="100" height="20" uuid="d149e8fc-ef5c-4d9f-8970-6e60dece5b20"/>
+				<text><![CDATA[Puna e kryer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="14" width="100" height="20" uuid="fb05bb82-6187-41f5-b232-c964d2a73408"/>
+				<text><![CDATA[Konsumatori]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="14" width="100" height="20" uuid="95c813fd-0cd2-4990-938f-7fca37890534"/>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="14" width="100" height="20" uuid="af23b3a8-dd36-46f8-addc-df59a27ca5a2"/>
+				<text><![CDATA[Punetori]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="533" height="1" uuid="dc566c8c-7488-43b5-add6-636c0448aa48"/>
+			</line>
+			<line>
+				<reportElement x="0" y="33" width="555" height="1" uuid="7794ff23-a4eb-442a-b216-d6bf66c64eda"/>
+			</line>
+			<staticText>
+				<reportElement x="455" y="14" width="100" height="20" uuid="f5274dee-05a9-4578-9052-4316593abf65"/>
+				<text><![CDATA[Pagesa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="0" y="11" width="43" height="20" uuid="8ef2699d-690c-4e94-858c-b4f89f03d672"/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="43" y="11" width="100" height="20" uuid="270c3657-a65e-48db-bcfe-8c12fc9649cd"/>
+				<textFieldExpression><![CDATA[$F{LLOJI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="143" y="11" width="111" height="20" uuid="4be873aa-cbed-4e38-bc43-fedb048c8449"/>
+				<textFieldExpression><![CDATA[$F{KONSUMATORI}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement mode="Transparent" x="254" y="11" width="100" height="20" uuid="cd706420-120d-494c-a43c-9b1fc391f846"/>
+				<textFieldExpression><![CDATA[$F{DATA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="354" y="11" width="100" height="20" uuid="c454df9e-7aac-42ff-bcde-abb26f76f73b"/>
+				<textFieldExpression><![CDATA[$F{PUNETORI}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00 €">
+				<reportElement mode="Transparent" x="455" y="11" width="100" height="20" uuid="a9d18948-bae3-459d-bdc4-a7d507bcb3d4"/>
+				<textFieldExpression><![CDATA[$F{QMIMI}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="243" y="19" width="100" height="20" uuid="f53f2cef-5161-408f-b40b-0e71f4db085f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="###0.00 €">
+				<reportElement x="454" y="14" width="100" height="20" uuid="1717c105-84c2-4f54-9e91-6903209a230c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{shuma}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="4" width="554" height="1" uuid="133cc18e-d1b8-4709-aeca-8442b7765659"/>
+			</line>
+			<staticText>
+				<reportElement x="420" y="14" width="34" height="20" uuid="be83ea85-df60-4c70-8e87-7ae3820706f0"/>
+				<text><![CDATA[Totali]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

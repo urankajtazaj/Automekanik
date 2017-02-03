@@ -1,0 +1,29 @@
+----------------------------------------------------------------
+Fri Oct 21 12:50:40 CEST 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0157-e6dd-2227-000002b659d0 
+on database directory /home/urankajtazaj/workspace/Exercices/Automekanik/Automekanik with class loader sun.misc.Launcher$AppClassLoader@14ae5a5 
+Loaded from file:/home/urankajtazaj/workspace/Exercices/Automekanik/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_101-b13
+user.dir=/home/urankajtazaj/workspace/Exercices/Automekanik
+os.name=Linux
+os.arch=amd64
+os.version=4.4.0-43-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Oct 21 12:50:41 CEST 2016:
+Shutting down instance a816c00e-0157-e6dd-2227-000002b659d0 on database directory /home/urankajtazaj/workspace/Exercices/Automekanik/Automekanik with class loader sun.misc.Launcher$AppClassLoader@14ae5a5 
+----------------------------------------------------------------
+Fri Oct 21 12:50:52 CEST 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance 40348015-0157-e6dd-2227-000002b659d0 
+on database directory /home/urankajtazaj/workspace/Exercices/Automekanik/Automekanik with class loader sun.misc.Launcher$AppClassLoader@14ae5a5 
+Loaded from file:/home/urankajtazaj/workspace/Exercices/Automekanik/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_101-b13
+user.dir=/home/urankajtazaj/workspace/Exercices/Automekanik
+os.name=Linux
+os.arch=amd64
+os.version=4.4.0-43-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

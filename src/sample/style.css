@@ -1,0 +1,213 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("/sample/font/Raleway-Regular.ttf");
+}
+
+.button {
+    -fx-background-color: linear-gradient(#EFEFEF, #EAEAEA);
+    -fx-background-radius: 0;
+    -fx-text-fill: rgba(0,0,0,0.8);
+    -fx-border-radius: 0;
+    -fx-border-width: 1;
+    -fx-border-color: #D3D3D3;
+    -fx-padding: 5 8 5 8;
+    -fx-font-weight: bold;
+}
+
+.hb {
+    -fx-background-color: transparent;
+    -fx-padding: 5 8 5 8;
+    -fx-effect: null;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#FCFCFC, #F2F2F2);
+}
+
+.login {
+    -fx-background-color: linear-gradient(#3566ED, #23449D);
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.2), 7, 0, 0, 1);
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-padding: 7;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+
+.login:hover {
+    -fx-background-color: linear-gradient(#5d85f2, #3d5eb6);
+    -fx-text-fill: #fff;
+}
+
+.text-field, .text-area, .date-picker {
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 5;
+    -fx-text-fill: #515151;
+    -fx-background-color: #fff;
+    -fx-border-width: 1;
+    -fx-border-color: #C9C9C9;
+}
+
+.date-picker .text-field {
+    -fx-effect: null;
+    -fx-border-width: 0;
+}
+
+.date-picker .button {
+    -fx-background-color: #fff;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-effect: null;
+}
+
+.text-field:focused, .text-area:focused, .date-picker:focused {
+    /*-fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 0, 1);
+*/}
+
+.tooltip {
+    -fx-background-color: #fff;
+    -fx-text-fill: #3D3D3D;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 0, 3);
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-font-size: 15;
+}
+
+.combo-box {
+     -fx-background-color: #fff;
+    -fx-text-fill: #515151;
+     -fx-padding: 0;
+     -fx-border-width: 1;
+     -fx-border-color: #C9C9C9;
+     -fx-border-radius: 4;
+     -fx-background-radius: 4;
+}
+
+.scroll-pane > .viewport .combo-box {
+    -fx-padding: 1;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
+}
+
+.default-color0.chart-series-area-fill { -fx-fill: rgba(201, 148, 199, 1); }
+.default-color1.chart-series-area-fill { -fx-fill: rgba(221, 28, 119, 1); }
+.default-color0.chart-series-area-line { -fx-stroke: rgba(201, 148, 199, 1); }
+.default-color1.chart-series-area-line { -fx-stroke: rgba(221, 28, 119, 1); }
+
+.default-color0.chart-area-symbol { -fx-background-color: rgba(201, 148, 199, 1); }
+.default-color1.chart-area-symbol { -fx-background-color: rgba(221, 28, 119, 1); }
+
+.root {
+
+}
+
+/*.scroll-pane > .viewport {
+    -fx-accent: #5DA5DA;
+}*/
+
+.rect {
+    -fx-fill: #fff;
+    -fx-effect: dropshadow(one-pass-box, rgb(210, 209, 215), 5, 0, 0, 0);
+}
+
+.table-view {
+    -fx-table-cell-border-color: transparent;
+    -fx-box-border: transparent;
+    -fx-table-cell-border-width: 0;
+    -fx-focus-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #f2f2f2;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: #000;
+    -fx-font-size: 12;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-row-cell {
+    -fx-cell-size: 30;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #fff;
+}
+
+.hyperlink {
+    -fx-text-fill: #1B75A6;
+    -fx-focus-color: transparent;
+}
+
+/*
+.table-row-cell:odd{
+    -fx-background-color: #F8FAFB;
+}
+*/
+.table-row-cell:selected {
+    -fx-background-color: #5DA5DA;
+    -fx-table-cell-border-color: #5DA5DA;
+}
+
+.trans {
+    -fx-effect: null;
+    -fx-background-color: transparent;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 7;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.trans:hover {
+    -fx-effect: null;
+    -fx-background-color: rgba(93, 165, 218, 0.15);
+}
+
+/*
+.table-view .table-column-cell:selected{
+    -fx-border-width: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #F9F9F9;
+}
+*/
+
+.titulli {
+    -fx-font-size: 18;
+    -fx-padding: 5 0 0 0;
+}
+
+.aktual {
+    -fx-font-family: "Raleway";
+    -fx-font-size: 30;
+}
+
+.dif {
+    -fx-font-family: "Raleway";
+    -fx-padding: 0 0 5 0;
+    -fx-font-size: 16;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #AFAFAF;
+}
+
+.kaluar {
+    -fx-text-fill: #474747;
+    -fx-font-family: "Raleway";
+}
