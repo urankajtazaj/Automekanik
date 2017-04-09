@@ -73,7 +73,6 @@ public class RrethProgramit {
 
         ImageView foto = new ImageView(new Image("/sample/foto/java.png"));
         Label lblTitulli = new Label("Automekanik Software");
-//        lblTitulli.contentDisplayProperty().setValue(ContentDisplay.RIGHT);
         lblTitulli.setTextFill(javafx.scene.paint.Paint.valueOf("#297CBC"));
         Label lblContent = new Label("© Copyright Uran Kajtazaj, Kosove, 2016. \nTe gjitha te drejtat e rezervuara.");
 
