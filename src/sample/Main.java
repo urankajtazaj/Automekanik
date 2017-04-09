@@ -96,14 +96,6 @@ public class Main extends Application {
         stack.getChildren().addAll(grid);
         stack.setAlignment(Pos.CENTER_LEFT);
 
-//        Task task = new Task() {
-//            @Override
-//            protected Object call() throws Exception {
-//                updateProgress(-1, -1);
-//                return null;
-//            }
-//        };
-
         btnKyqu.setOnAction(e -> {
             if (!user.getText().isEmpty() && !pw.getText().isEmpty()){
                 login(primaryStage);
