@@ -70,14 +70,14 @@ public class DritarjaKryesore {
     TextField txtQmimi = new TextField();
     TextField txtSasia = new TextField();
     TextArea txtInfo = new TextArea();
-    Button btnKerko = new Button("Kerko");
-    Button btnPastro = new Button("Pastro");
+    Button btnKerko = new Button("Search");
+    Button btnPastro = new Button("Clean");
     //    Button btnShto = new Button("Shto");
-    Button btnFshi = new Button("Fshi");
+    Button btnFshi = new Button("Delete");
     Button btnPlus = new Button("");
     Button btnMinus = new Button("");
-    Button btnRregullo = new Button("Azhurno");
-    Button btnRifresko = new Button("Rifresko");
+    Button btnRregullo = new Button("Update");
+    Button btnRifresko = new Button("Refresh");
     TableView table = new TableView();
     TableView<TabelaPunet> tblPunet = new TableView<>();
     ObservableList<mbushTabelen> data;
@@ -97,8 +97,8 @@ public class DritarjaKryesore {
     TextField qTxtTipi = new TextField();
     TextField qTxtQmimi = new TextField();
     Label err = new Label("");
-    Label lblTeHyrat = new Label("Te dhenat e paisjeve");
-    Label lblShpenzimet = new Label("Punet");
+    Label lblTeHyrat = new Label("Parts data");
+    Label lblShpenzimet = new Label("Jobs");
     Label lblId = new Label();
     boolean show = true, show2 = true;
     TextField s_cbPuna = new TextField();
@@ -108,13 +108,13 @@ public class DritarjaKryesore {
     TextField s_txtPaisja = new TextField();
     TextField s_cbEmriKons = new TextField();
     TextArea txtPer = new TextArea();
-    Button btnBlej = new Button("Ruaj");
-    Button s_btnPastro = new Button("Pastro");
+    Button btnBlej = new Button("Save");
+    Button s_btnPastro = new Button("Clean");
     TextField txtPunetori = new TextField();
-    TableColumn<TabelaPunet, Float> colPagesa = new TableColumn("Pagesa");
+    TableColumn<TabelaPunet, Float> colPagesa = new TableColumn("Wage");
     VBox left_root = new VBox();
 
-    CheckBox punaKryer = new CheckBox("Puna ka perfunduar");
+    CheckBox punaKryer = new CheckBox("Job has finished");
     ComboBox<String> cbPaisjet = new ComboBox<>();
     ComboBox<String> cbProdhuesi = new ComboBox<>();
     TextField txtMakina = new TextField();
@@ -213,17 +213,17 @@ public class DritarjaKryesore {
         btnV2.setGraphic(new ImageView(new Image("/sample/foto/view.png")));
         btnV3.setGraphic(new ImageView(new Image("/sample/foto/view.png")));
 
-        btnA1.setTooltip(new Tooltip("Shto konsumatore"));
-        btnV1.setTooltip(new Tooltip("Shiko konsumatoret"));
-        btnA2.setTooltip(new Tooltip("Shto paisje"));
-        btnV2.setTooltip(new Tooltip("Shiko financat"));
-        btnA3.setTooltip(new Tooltip("Shto punetore"));
-        btnV3.setTooltip(new Tooltip("Shiko punetoret"));
+        btnA1.setTooltip(new Tooltip("Add consumer"));
+        btnV1.setTooltip(new Tooltip("View consumers"));
+        btnA2.setTooltip(new Tooltip("Add part"));
+        btnV2.setTooltip(new Tooltip("View finances"));
+        btnA3.setTooltip(new Tooltip("Add employee"));
+        btnV3.setTooltip(new Tooltip("View employees"));
 
-        Text lblCons = new Text("Konsumatoret");
-        Text lblFin = new Text("Financat");
-        Text lblPaisjet = new Text("Paisjet");
-        Text lblPun = new Text("Punetoret");
+        Text lblCons = new Text("Costumer");
+        Text lblFin = new Text("Finance");
+        Text lblPaisjet = new Text("Parts");
+        Text lblPun = new Text("Employees");
         lblCons.setTextAlignment(TextAlignment.LEFT);
 
         btn_rect1.getChildren().addAll(btnA1, btnV1);
@@ -321,7 +321,7 @@ public class DritarjaKryesore {
         });
 
         btnRifresko.setMinWidth(85);
-        qCbProdhuesi.setPromptText("Prodhuesi");
+        qCbProdhuesi.setPromptText("Maker");
         txtLloji.setMaxWidth(210);
         txtSasia.setMaxWidth(120);
         txtSasia.setMinWidth(120);
@@ -338,11 +338,11 @@ public class DritarjaKryesore {
         HBox pyet = new HBox(10);
         VBox center = new VBox();
 //        root.setPadding(new Insets(10));
-        stage.setTitle("Dritarja Kryesore");
+        stage.setTitle("Main Window");
 //        connectionToDB();
         leftSide(this);
         HBox ns = new HBox(5);
-        Label qm = new Label("Qmimi");
+        Label qm = new Label("Price");
         qm.setMinWidth(45);
         qm.setAlignment(Pos.CENTER_RIGHT);
         qm.setPadding(new Insets(7, 0, 0, 0));
@@ -353,11 +353,11 @@ public class DritarjaKryesore {
         qTxtQmimi.setPrefWidth(90);
         qTxtTipi.setPrefWidth(120);
         qCbProdhuesi.setPrefWidth(120);
-        qTxtPaisja.setPromptText("Kategoria");
-        qTxtTipi.setPromptText("Modeli vetures");
-        qTxtPjesa.setPromptText("Paisja");
-        qCbProdhuesi.setPromptText("Prodhuesi");
-        qTxtQmimi.setPromptText("Qmimi");
+        qTxtPaisja.setPromptText("Category");
+        qTxtTipi.setPromptText("Car model");
+        qTxtPjesa.setPromptText("Part");
+        qCbProdhuesi.setPromptText("Maker");
+        qTxtQmimi.setPromptText("Price");
 
         qCbOp.getItems().addAll("=", ">", "<");
         qCbOp.getSelectionModel().select(0);
@@ -368,12 +368,12 @@ public class DritarjaKryesore {
 
         //Krijimi i kolonave per tabel - Select
         TableColumn colId = new TableColumn("Id");
-        TableColumn colPjesa = new TableColumn("Paisja");
-        TableColumn colPaisja = new TableColumn("Kategoria");
-        TableColumn colProdhuesi = new TableColumn("Modeli");
-        TableColumn colTipi = new TableColumn("Prodhuesi");
-        TableColumn colQmimi = new TableColumn("Qmimi");
-        TableColumn colSasia = new TableColumn("Sasia");
+        TableColumn colPjesa = new TableColumn("Part");
+        TableColumn colPaisja = new TableColumn("Category");
+        TableColumn colProdhuesi = new TableColumn("Model");
+        TableColumn colTipi = new TableColumn("Maker");
+        TableColumn colQmimi = new TableColumn("Price");
+        TableColumn colSasia = new TableColumn("Quantity");
         TableColumn colShtese = new TableColumn("Info");
 
         //Gjeresia e kolonave
@@ -403,11 +403,11 @@ public class DritarjaKryesore {
         //***********************************
 
         TableColumn colStat_p = new TableColumn("");
-        TableColumn colPunaKryer = new TableColumn("Puna e kryer");
-        TableColumn colData_p = new TableColumn("Data");
-        TableColumn colPershkrimi = new TableColumn("Pershkrimi");
-        TableColumn colKonsumatori = new TableColumn("Konsumatori");
-        TableColumn colMakina = new TableColumn("Makina");
+        TableColumn colPunaKryer = new TableColumn("Job");
+        TableColumn colData_p = new TableColumn("Date");
+        TableColumn colPershkrimi = new TableColumn("Description");
+        TableColumn colKonsumatori = new TableColumn("Costumer");
+        TableColumn colMakina = new TableColumn("Car");
 
         colStat_p.setMinWidth(50);
         colStat_p.setMaxWidth(50);
@@ -455,7 +455,7 @@ public class DritarjaKryesore {
         selektimi();
 
         ContextMenu cm = new ContextMenu();
-        MenuItem miRaportiPaisjet = new MenuItem("Krijo raportin per paisjet");
+        MenuItem miRaportiPaisjet = new MenuItem("Create report for parts");
         cm.getItems().add(miRaportiPaisjet);
 
         table.setOnMouseClicked(e -> {
@@ -551,11 +551,11 @@ public class DritarjaKryesore {
         txtPunetori.setText(log_user.getText());
 
         MenuBar menu = new MenuBar();
-        Menu mHelp = new Menu("Ndihme");
-        Menu mProgrami = new Menu("Programi");
-        MenuItem miMbyll = new MenuItem("Mbyll");
-        MenuItem miDil = new MenuItem("Dil");
-        MenuItem miAbout = new MenuItem("Rreth programit");
+        Menu mHelp = new Menu("Help");
+        Menu mProgrami = new Menu("File");
+        MenuItem miMbyll = new MenuItem("Close");
+        MenuItem miDil = new MenuItem("Log out");
+        MenuItem miAbout = new MenuItem("About");
         mHelp.getItems().addAll(miAbout);
         mProgrami.getItems().addAll(miDil, new SeparatorMenuItem(), miMbyll);
         menu.getMenus().addAll(mProgrami, mHelp);
@@ -579,7 +579,7 @@ public class DritarjaKryesore {
         sc.setFitToHeight(true);
 //        root.setTop(menu);
         root.setCenter(sc);
-        table.setPlaceholder(new Label("Nuk ka te dhena"));
+        table.setPlaceholder(new Label("No data"));
         scene.getStylesheets().add(getClass().getResource("/sample/style.css").toExternalForm());
         stage.setScene(scene);
         stage.setMinWidth(942);
@@ -590,7 +590,7 @@ public class DritarjaKryesore {
 
     public void leftSide(DritarjaKryesore dk) {
         s_cbPuna.setEditable(true);
-        Label lblDeri = new Label(" deri ");
+        Label lblDeri = new Label(" to ");
         lblDeri.setPadding(new Insets(5, 0, 0, 0));
         lblTeHyrat.setGraphic(new ImageView(new Image("/sample/foto/down.png")));
         lblShpenzimet.setGraphic(new ImageView(new Image("/sample/foto/down.png")));
@@ -620,17 +620,17 @@ public class DritarjaKryesore {
         txtInfo.setPromptText("Informacione shtese");
 
         GridPane grid = new GridPane();
-        grid.add(new Label("Paisja"), 0, 0);
+        grid.add(new Label("Part"), 0, 0);
         grid.add(txtPjesa, 1, 0);
-        grid.add(new Label("Kategoria"), 0, 1);
+        grid.add(new Label("Category"), 0, 1);
         grid.add(txtPaisja, 1, 1);
-        grid.add(new Label("Prodhuesi"), 0, 2);
+        grid.add(new Label("Maker"), 0, 2);
         grid.add(txtLloji, 1, 2);
-        grid.add(new Label("Modeli"), 0, 3);
+        grid.add(new Label("Model"), 0, 3);
         grid.add(txtTipi, 1, 3);
-        grid.add(new Label("Qmimi "), 0, 4);
+        grid.add(new Label("Price "), 0, 4);
         grid.add(txtQmimi, 1, 4);
-        grid.add(new Label("Sasia"), 0, 5);
+        grid.add(new Label("Quantity"), 0, 5);
         grid.add(laySasia, 1, 5);
         grid.add(txtInfo, 1, 6);
         grid.add(butonat1, 1, 7);
@@ -664,7 +664,7 @@ public class DritarjaKryesore {
 
         txtPer.setPrefColumnCount(4);
         txtPer.setPrefRowCount(3);
-        txtPer.setPromptText("Informacione shtese");
+        txtPer.setPromptText("More info");
         txtPer.setPadding(new Insets(0));
 
         s_grid.add(new Label("Puna e kryer"), 0, 0);
