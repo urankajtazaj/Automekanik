@@ -10,7 +10,7 @@ Download the jar file:
 [JAR FILE](https://github.com/urankajtazaj/Automekanik/releases/download/v1/Automekanik.jar)
 
 Download the database here:
-[DATABASE](https://drive.google.com/file/d/0B4XkfHEooPfOb3oxUFBrUUJfbEk/view?usp=sharing)
+[DATABASE](https://drive.google.com/file/d/0B4XkfHEooPfOb3oxUFBrUUJfbEk/view?usp=sharing&resourcekey=0-Zsss-4G0QeOoumppQVwzFg)
 
 Place the database on your home directory:
 
